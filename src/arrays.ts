@@ -128,7 +128,13 @@ export function injectPositive(values: number[]): number[] {
     if (values.length === 0) {
         return [];
     }
-    const negativeNum = values.findIndex((num) => num < 0);
+
+    if (negativeNum === -1) {
+        const sum = values.reduce();
+    }
+    const negativeNum = values.findIndex((num: number): boolean => num < 0);
+    const bNeg = values.slice(0, negativeNum + 1);
+    const aNeg = values.slice(negativeNum + 1);
 
     return [];
 }
